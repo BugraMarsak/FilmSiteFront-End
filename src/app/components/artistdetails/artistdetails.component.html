@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-lg-4 forcenter" >
+        <img src="{{artist.photo}}" id="forimg" alt="Not Working">
+    </div>
+    <div class="col-lg-8 forcenter">
+        <h1 >{{artist.fullName}}</h1>
+        <h3>{{artist.history}}</h3>
+    </div>
+    
+    <div>
+        <h2 class="forcenter">Oynadığı Filmler</h2>
+        <div class="row">
+            <div class="col-lg-2 forcenter formoviepadding"  *ngFor="let movie of movies">
+                <img src="{{movie.coverImage}}" id="forcoverimg"  alt="Not Working">
+                <h4 routerLink = "/filmler/{{movie.movieId}}" >{{movie.movieName}}</h4>
+            </div>
+        </div>
+    </div>
+
+</div>

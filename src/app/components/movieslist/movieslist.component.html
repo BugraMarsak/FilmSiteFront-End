@@ -1,0 +1,11 @@
+<div class="row " *ngFor="let movie of movies">
+    <div class="row col-lg-4">
+        <img class="col-lg-2" src="{{movie.coverImage}}" id="forcoverimg" alt="Not working">
+        <h3 class="col-lg-4">{{movie.movieName}}</h3>
+        <a class="btn btn-secondary btn-lg btn-block rounded-pill" routerLink = "/filmler/{{movie.movieId}}" >Get Details</a>
+    </div>
+    
+    
+    
+</div>
+

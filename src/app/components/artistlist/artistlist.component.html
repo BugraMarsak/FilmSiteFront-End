@@ -1,0 +1,5 @@
+<div class="row padding" *ngFor="let artist of artists">
+    <h3>{{artist.fullName}}</h3>
+    
+    <a class="btn btn-secondary btn-lg btn-block rounded-pill" routerLink = "/aktörler/{{artist.artistId}}" >Get Details</a>
+</div>

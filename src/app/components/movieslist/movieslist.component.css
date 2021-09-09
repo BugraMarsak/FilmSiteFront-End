@@ -1,0 +1,22 @@
+.forbackground{
+    background-color:#53B8BB ;
+}
+.padding{
+    padding-top: 0.8rem ;
+    padding-bottom: 0.8rem;
+}
+
+#forimg{
+    width: 18rem;
+    height: 25rem;
+}
+.forcenter{
+    text-align: center;
+}
+#forcoverimg{
+    width: 10rem;
+    height: 12.5rem; 
+}
+.formoviepadding{
+    padding-top: 2rem;
+}
