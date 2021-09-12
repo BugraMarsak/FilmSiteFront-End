@@ -5,6 +5,7 @@ import { GenreOfMovie } from '../models/genreofmovie';
 
 import { ListResponseModel } from '../models/listResponseModel';
 import { MovieAndArtist } from '../models/movieandartist';
+import { ResponseModel } from '../models/responseModel';
 
 
 
@@ -26,6 +27,8 @@ export class GenreOfMovieService {
     let newPath=this.apiUrl+"GenreOfMovie/getbymovieid?Id="+Id
     return this.httpClient.get<ListResponseModel<GenreOfMovie>>(newPath);
   }
-
+  add(genreOfMovie:GenreOfMovie):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"GenreOfMovie/add",genreOfMovie);
+  }
 
 }

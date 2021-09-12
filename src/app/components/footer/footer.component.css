@@ -1,0 +1,27 @@
+#footer-bottom{
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+#footer-body{
+    padding-top: 1.5rem ;
+    padding-bottom: 1.5rem;
+    border-bottom:0.3rem solid #2e3642;
+}
+#footer-head{
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top:0.3rem solid #2e3642;
+}
+
+#footer-links{
+    width: 2rem;
+    height: 2rem;
+
+}
+.forbackground{
+    background-color: #222831;
+    text-align:center;
+}

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Artist } from '../models/artist';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 
 
@@ -26,5 +27,9 @@ export class ArtistService {
     return this.httpClient.get<ListResponseModel<Artist>>(newPath);
   }
 
+  
+  add(artist:Artist):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"artist/add",artist);
+  }
 
 }

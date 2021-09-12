@@ -30,13 +30,15 @@ export class MoviedetailsComponent implements OnInit {
   comments:Comment[]=[];
   users:User[]=[];
   totalRate:number;
+  userRate:number;
+  userRemark:string="";
   movieTypes:MovieType[]=[];
   style:string="";
   userName:string="";
   commentForm:FormGroup;
   ngOnInit(): void {
     this.getMovieId();
-    this.getName(1);
+    
   }
 
   createCommitForm(movieId:number){
@@ -47,16 +49,22 @@ export class MoviedetailsComponent implements OnInit {
       movieId:[movieId,Validators.required],
       remark:["",Validators.required],
       rate:["",Validators.required],
-      userName:[this.userName,Validators.required],
+      userName:["",Validators.required],
       
     })
+    
   }
 
   sendCommit(){
+    this.commentForm.controls["userName"].setValue(this.userName)
+    this.commentForm.controls["rate"].setValue(this.userRate)
+    this.commentForm.controls["remark"].setValue(this.userRemark)
+    console.log(this.commentForm.value)
     if(this.commentForm.valid){
       let commentModel=Object.assign({},this.commentForm.value);
       this.commentService.add(commentModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı!");
+        window.location.reload();
       })
     }
     else{
@@ -66,6 +74,7 @@ export class MoviedetailsComponent implements OnInit {
 
   setter(value:string){
     this.userName = value
+    
   }
 
   getName(userId:number){
@@ -129,9 +138,17 @@ export class MoviedetailsComponent implements OnInit {
 
   getComments(id:number){
     this.commentService.getById(id).subscribe(response=>{
-      this.comments =response.data
+      this.reverseComments(response.data);
       this.getTotalRates(response.data);
     })
+  }
+
+  reverseComments(value:Comment[]){
+    let j:number =1;
+    for(let i=0;value.length>i;i++){
+      this.comments[i] =value[value.length-j]
+      j +=1;
+    }
   }
 
   getTotalRates(comments:Comment[]){
@@ -149,6 +166,7 @@ export class MoviedetailsComponent implements OnInit {
       this.getMAA(params["movieId"]);
       this.getComments(params["movieId"]);
       this.getGenre(params["movieId"]);
+      this.createCommitForm(params["movieId"]);
     })
   }
 

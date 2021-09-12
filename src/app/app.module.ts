@@ -16,6 +16,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AddartistComponent } from './components/addartist/addartist.component';
+import { AddmovieComponent } from './components/addmovie/addmovie.component';
+import { AddmmaComponent } from './components/addmma/addmma.component';
+import { MoviefilterPipe } from './pipes/moviefilter.pipe';
+import { AddgenreComponent } from './components/addgenre/addgenre.component';
 
 
 @NgModule({
@@ -30,6 +35,11 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterComponent,
     MainComponent,
     FooterComponent,
+    AddartistComponent,
+    AddmovieComponent,
+    AddmmaComponent,
+    MoviefilterPipe,
+    AddgenreComponent,
   ],
   imports: [
     BrowserModule,

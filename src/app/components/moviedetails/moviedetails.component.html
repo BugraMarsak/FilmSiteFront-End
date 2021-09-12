@@ -25,10 +25,9 @@
 
     <h2 class="forcenter m-padding">Yorumlar</h2>
     <div class="col-lg-8 offset-lg-2 comment-part">   
-        <form form [formGroup]="commentForm">
-            <h4>Puanın:</h4>
-            <div class="input-group mb-3">
-                <select class="form-select" formControlName="rate" id="inputGroupSelect02">
+        <h4>Puanın:</h4>
+        <div class="input-group mb-3">
+                <select class="form-select" [(ngModel)]="userRate" id="inputGroupSelect02">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -42,14 +41,14 @@
                 <option value="10">10</option>
               
                 </select>
-            </div>
+        </div>
+             
         <h4>Yorumun:</h4>
-        <textarea class="form-control" formControlName="remark" id="exampleFormControlTextarea1" placeholder="Yorum ekle" rows="4"></textarea>
+        <textarea class="form-control" [(ngModel)]="userRemark" id="exampleFormControlTextarea1" placeholder="Yorum ekle" rows="4"></textarea>
         <div>
-            <button class="btn btn-lg rounded-pill " >Yorum Ekle</button>
+            <button class="btn btn-lg rounded-pill " (click)="sendCommit()" >Yorum Ekle</button>
 
         </div>
-        </form>
         
     </div>
     <div class=" col-lg-8 offset-lg-2 comment-part" *ngFor="let comment of comments">   

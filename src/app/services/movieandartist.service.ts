@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ListResponseModel } from '../models/listResponseModel';
 import { MovieAndArtist } from '../models/movieandartist';
+import { ResponseModel } from '../models/responseModel';
 
 
 
@@ -26,5 +27,8 @@ export class MovieAndArtistService {
     return this.httpClient.get<ListResponseModel<MovieAndArtist>>(newPath);
   }
 
+  add(mma:MovieAndArtist):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"MovieAndArtist/add",mma);
+  }
 
 }

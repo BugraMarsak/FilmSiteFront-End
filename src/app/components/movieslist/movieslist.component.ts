@@ -13,12 +13,16 @@ import { MovieTypeService } from 'src/app/services/movietype.service';
 })
 export class MovieslistComponent implements OnInit {
 
-  movies:Movie[]=[]
-  style:string=""
+  movies:Movie[]=[];
+  style:string="";
+  filterText:string="";
+  filterType:string="";
+  movieTypes:MovieType[]=[];
   constructor(private movieService:MovieService,private movieTypeService:MovieTypeService ,private genreOfMovieService:GenreOfMovieService) { }
 
   ngOnInit(): void {
     this.getAllMovies();
+    // this.getMovieType()
   }
 
   getAllMovies(){
@@ -28,35 +32,41 @@ export class MovieslistComponent implements OnInit {
     })
   }
 
-  getGenre(movieId:number){
-    this.genreOfMovieService.getByMovieId(movieId).subscribe(response=>{
-      this.getMovieTypes(response.data)
+  // getGenre(movieId:number){
+  //   this.genreOfMovieService.getByMovieId(movieId).subscribe(response=>{
+  //     this.getMovieTypes(response.data)
       
-    })
-  }
+  //   })
+  // }
 
-  getMovieTypes(genreOfMovie:GenreOfMovie[]){
-    let movieTypes:MovieType[]=[];
-    for(let i =0;genreOfMovie.length>i;i++){
-      this.movieTypeService.getById(genreOfMovie[i].movieTypeId).subscribe(response=>{
-        movieTypes[i] =response.data
-      })
-    }
-    this.doStyle(movieTypes);
-  }
+  // getMovieTypes(genreOfMovie:GenreOfMovie[]){
+  //   let movieTypes:MovieType[]=[];
+  //   for(let i =0;genreOfMovie.length>i;i++){
+  //     this.movieTypeService.getById(genreOfMovie[i].movieTypeId).subscribe(response=>{
+  //       movieTypes[i] =response.data
+  //     })
+  //   }
+  //   this.doStyle(movieTypes);
+  // }
 
-  doStyle(movieTypes:MovieType[]){
-    this.style=""
-    for(let i=0;movieTypes.length>i;i++){
-      if(i==0){
-        this.style =movieTypes[i].movieTypeName;
-      }else{
-        this.style = this.style + "/"+ movieTypes[i].movieTypeName
-      }
+  // getMovieType(){
+  //   this.movieTypeService.getAll().subscribe(response=>{
+  //     this.movieTypes = response.data;
+  //   })
+  // }
+
+  // doStyle(movieTypes:MovieType[]){
+  //   this.style=""
+  //   for(let i=0;movieTypes.length>i;i++){
+  //     if(i==0){
+  //       this.style =movieTypes[i].movieTypeName;
+  //     }else{
+  //       this.style = this.style + "/"+ movieTypes[i].movieTypeName
+  //     }
       
-    }
-    return this.style;
+  //   }
+  //   return this.style;
     
-  }
+  // }
 
 }
