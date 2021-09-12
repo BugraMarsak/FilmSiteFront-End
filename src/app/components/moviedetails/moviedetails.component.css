@@ -12,3 +12,27 @@
 .formoviepadding{
     padding-top: 2rem;
 }
+.comment-part{
+    padding-top: 2rem;
+     
+}
+.remark-bg{
+    background-color: #FFD369;
+    padding-bottom: 0.4rem;
+    padding-left: 0.3rem;  
+    padding-right: 0.3rem;
+}
+.username-bg{
+    color: aliceblue;
+    background-color: #222831;
+    border-bottom: #222831;
+    padding-bottom: 0.4rem;
+    padding-left: 0.3rem;    
+}
+.m-padding{
+    padding-top: 1rem;
+}
+.btn{
+    margin-top: 1rem;
+    background-color:#FFD369 ;
+}

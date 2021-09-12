@@ -1,0 +1,19 @@
+.form-control{
+    height: 50px;
+}
+.row{
+    padding: 4rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+    background-color: #2e3238 ;
+    color: aliceblue;
+}
+.forborder{
+    border-left:0.3rem solid #F2DAC3;
+}
+.test{
+    font-size: 1.5rem;
+}
+.btn{
+    background-color: #C8C2BC;
+}

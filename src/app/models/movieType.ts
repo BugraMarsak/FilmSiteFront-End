@@ -1,4 +1,4 @@
-export interface Artist{
-     MovieTypeId:number;
-     MovieTypeName:string;
+export interface MovieType{
+     movieTypeId:number;
+     movieTypeName:string;
 }

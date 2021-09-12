@@ -1,11 +1,25 @@
-<div class="row " *ngFor="let movie of movies">
-    <div class="row col-lg-4">
-        <img class="col-lg-2" src="{{movie.coverImage}}" id="forcoverimg" alt="Not working">
-        <h3 class="col-lg-4">{{movie.movieName}}</h3>
-        <a class="btn btn-secondary btn-lg btn-block rounded-pill" routerLink = "/filmler/{{movie.movieId}}" >Get Details</a>
+<div class="row " >
+
+    <div class="border">
+        <h1>filter </h1>
+    </div>
+
+    <div class="col-lg-4 col-md-6 padding forcenter" *ngFor="let movie of movies">
+        <div class="card  ">
+            <img  class="card-img-top" src="{{movie.coverImage}}" id="forcoverimg" alt="Not working">
+            <div class="card-body cardpadding">
+              <h4>Movie:{{movie.movieName}}</h4>
+              <h3></h3>
+              <h5>Director:{{movie.directorName}}</h5>
+              <a class="btn btn-secondary btn-lg rounded-pill" routerLink = "/filmler/{{movie.movieId}}" >Get Details</a>
+            </div>
+            
+        </div>
+
     </div>
     
     
     
 </div>
 
+  

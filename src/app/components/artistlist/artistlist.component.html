@@ -1,5 +1,16 @@
-<div class="row padding" *ngFor="let artist of artists">
-    <h3>{{artist.fullName}}</h3>
+<div class="row " >
+    <div class="col-lg-4 padding forcenter" *ngFor="let artist of artists">
+        <div class="card ">
+            <img  class="card-img-top" src="{{artist.photo}}" id="forcoverimg" alt="Not working">
+            <div class="card-body">
+              <h3>Artist:{{artist.fullName}}</h3>
+              <a class="btn btn-secondary btn-lg rounded-pill" routerLink = "/aktörler/{{artist.artistId}}" >Get Details</a>
+            </div>
+            
+        </div>
+
+    </div>
     
-    <a class="btn btn-secondary btn-lg btn-block rounded-pill" routerLink = "/aktörler/{{artist.artistId}}" >Get Details</a>
+    
+    
 </div>

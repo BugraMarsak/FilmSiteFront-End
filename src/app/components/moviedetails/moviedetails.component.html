@@ -1,20 +1,61 @@
 <div class="row">
+    <h1>
+        
+    </h1>
     <div class="col-lg-4 forcenter" >
         <img src="{{movie.coverImage}}" id="forimg" alt="Not Working">
     </div>
     <div class="col-lg-8 forcenter">
-        <h1 >{{movie.movieName}}</h1>
+        <h1 >{{movie.movieName}} - Total Point:{{totalRate}}</h1>
+        <h2>{{doStyle()}}</h2> 
         <h3>{{movie.explanation}}</h3>
     </div>
     
     <div>
         <h2 class="forcenter">Oyuncular</h2>
         <div class="row">
+            
             <div class="col-lg-2 forcenter formoviepadding"  *ngFor="let artist of artists">
                 <img src="{{artist.photo}}" id="forcoverimg"  alt="Not Working">
                 <h4 routerLink = "/aktörler/{{artist.artistId}}" >{{artist.fullName}}</h4>
             </div>
         </div>
     </div>
+
+
+    <h2 class="forcenter m-padding">Yorumlar</h2>
+    <div class="col-lg-8 offset-lg-2 comment-part">   
+        <form form [formGroup]="commentForm">
+            <h4>Puanın:</h4>
+            <div class="input-group mb-3">
+                <select class="form-select" formControlName="rate" id="inputGroupSelect02">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              
+                </select>
+            </div>
+        <h4>Yorumun:</h4>
+        <textarea class="form-control" formControlName="remark" id="exampleFormControlTextarea1" placeholder="Yorum ekle" rows="4"></textarea>
+        <div>
+            <button class="btn btn-lg rounded-pill " >Yorum Ekle</button>
+
+        </div>
+        </form>
+        
+    </div>
+    <div class=" col-lg-8 offset-lg-2 comment-part" *ngFor="let comment of comments">   
+        <h2 class="username-bg">{{comment.userName}}<a> - Puan:{{comment.rate}}</a></h2>
+        <h3 class="remark-bg">{{comment.remark}}</h3>
+    </div>
+    
 
 </div>

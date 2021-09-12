@@ -1,3 +1,28 @@
-.navbar{
-    background-color: #C8C6C6;
+nav{
+    color:aliceblue;
+}
+.logo{
+    width: 2.5rem;
+}
+.btn{
+    background-color: #2c2727;
+    color: white;
+}
+.den{
+    width: 8rem;
+}
+.padding{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.my-container{
+    color: aliceblue;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+
+    
 }

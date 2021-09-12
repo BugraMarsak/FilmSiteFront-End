@@ -10,6 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtistlistComponent } from './components/artistlist/artistlist.component';
 import { ArtistdetailsComponent } from './components/artistdetails/artistdetails.component';
+import { ToastrModule} from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MainComponent } from './components/main/main.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +25,11 @@ import { ArtistdetailsComponent } from './components/artistdetails/artistdetails
     MovieslistComponent,
     MoviedetailsComponent,
     ArtistlistComponent,
-    ArtistdetailsComponent
+    ArtistdetailsComponent,
+    LoginComponent,
+    RegisterComponent,
+    MainComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +37,10 @@ import { ArtistdetailsComponent } from './components/artistdetails/artistdetails
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
