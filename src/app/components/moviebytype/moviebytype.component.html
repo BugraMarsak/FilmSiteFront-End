@@ -6,9 +6,10 @@
 
     <div class=" col-lg-6 padding">
         <select [(ngModel)]="filterType"  class="forselect">
-            <option *ngFor="let movieType of movieTypes" [ngValue]="movieType.movieTypeId">{{movieType.movieTypeName}}</option>
+            <option *ngFor="let movieType of movieTypes" [value]="movieType.movieTypeId">{{movieType.movieTypeName}}</option>
         </select>
     </div> 
+    <!-- tam çalışmıyor -->
     
 
     <div class="col-lg-4 col-md-6 padding forcenter" *ngFor="let movie of movies |moviefilter:filterText ">
@@ -25,8 +26,8 @@
 
     </div>
     
-    
+    <div *ngIf="!check">
+       <h1 class="forh1">{{srry}}</h1> 
+    </div>
     
 </div>
-
-  

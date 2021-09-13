@@ -21,6 +21,8 @@ import { AddmovieComponent } from './components/addmovie/addmovie.component';
 import { AddmmaComponent } from './components/addmma/addmma.component';
 import { MoviefilterPipe } from './pipes/moviefilter.pipe';
 import { AddgenreComponent } from './components/addgenre/addgenre.component';
+import { ArtistfilterPipe } from './pipes/artistfilter.pipe';
+import { MoviebytypeComponent } from './components/moviebytype/moviebytype.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { AddgenreComponent } from './components/addgenre/addgenre.component';
     AddmmaComponent,
     MoviefilterPipe,
     AddgenreComponent,
+    ArtistfilterPipe,
+    MoviebytypeComponent,
   ],
   imports: [
     BrowserModule,

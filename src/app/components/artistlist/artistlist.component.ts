@@ -10,6 +10,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 export class ArtistlistComponent implements OnInit {
 
   artists:Artist[]=[];
+  artistFilter:string ="";
   constructor(private artistService:ArtistService) { }
 
   ngOnInit(): void {

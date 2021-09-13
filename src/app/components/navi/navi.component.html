@@ -1,19 +1,21 @@
 <nav class="row padding">
-    <a class="navbar-brand" routerLink="" class="col-lg-1 offset-lg-1"><img src="../../../assets/images/movie.png" class="logo" alt=""></a>
-    <div class="col-lg-2 " >
-      <a class="btn btnextend rounded-pill" (click)="getMovies()" routerLink="{{result}}"  >şanslı hissediyorum</a>
-      <!-- sayfada olmayan veriler bir önceki sayfadan ekleniyor.-->
-    </div>
-    <div class="col-lg-2 offset-lg-1" >
-      <a class="btn rounded-pill" routerLink="/aktörler" >Aktörler</a>
-    </div>
-    <div class="col-lg-2" >
-      <a  routerLink="/filmler" class="btn rounded-pill" >Filmler</a>
-    </div>
-    <div class="col-lg-2">
-      <a class="btn rounded-pill " routerLink="/login">Giriş Yap</a>
-    </div>
-    
-    
+      <a class="navbar-brand" routerLink="" class="col-lg-1 offset-lg-1"><img src="../../../assets/images/movie.png" class="logo" alt=""></a>
+     
+      <div class="col-lg-2 " >
+        <a class="btn btnextend rounded-pill" (click)="getMovies()" routerLink="{{result}}"  >şanslı hissediyorum</a>
+        <!-- sayfada olmayan veriler bir önceki sayfadan ekleniyor.-->
+      </div>
+      <div class="col-lg-2 col-xs-12 offset-lg-1" >
+        <a class="btn rounded-pill" routerLink="/aktörler" >Aktörler</a>
+      </div>
+      <div class="col-lg-2" >
+        <a  routerLink="/filmler" class="btn rounded-pill" >Filmler</a>
+      </div>
+      <div *ngIf="checkTokenId()" class="col-lg-2">
+        <a class="btn rounded-pill " routerLink="/login">Giriş Yap</a>
+      </div>
+      <div *ngIf="!checkTokenId()" class="col-lg-2">
+        <a class="btn rounded-pill">Welcome {{userName}}</a>
+      </div>    
     
 </nav>

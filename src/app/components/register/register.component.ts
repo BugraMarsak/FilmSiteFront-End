@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
     this.authService.register(registerModel).subscribe(response=>{
       this.toastrservice.info("Hesap oluşturuldu.")
     },responseError=>{
-      //console.log(responseError);
       this.toastrservice.error(responseError.error)
     })
   }

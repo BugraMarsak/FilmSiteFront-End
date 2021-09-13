@@ -11,12 +11,18 @@ import { MoviedetailsComponent } from './components/moviedetails/moviedetails.co
 import { MovieslistComponent } from './components/movieslist/movieslist.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddgenreComponent } from './components/addgenre/addgenre.component';
+import { MainComponent } from './components/main/main.component';
+import { MoviebytypeComponent } from './components/moviebytype/moviebytype.component';
+
+
+
 const routes: Routes = [
-  {path:"",component:MovieslistComponent},
+  {path:"",component:MainComponent},
   {path:"filmler",component:MovieslistComponent},
   {path:"aktörler",component:ArtistlistComponent},
   {path:"aktörler/:artistId",component:ArtistdetailsComponent},
   {path:"filmler/:movieId",component:MoviedetailsComponent},
+  {path:"film/kategori/:movieTypeId",component:MoviebytypeComponent},
   {path:"film/ekle",component:AddmovieComponent},
   {path:"aktör/ekle",component:AddartistComponent},
   {path:"fva/ekle",component:AddmmaComponent},

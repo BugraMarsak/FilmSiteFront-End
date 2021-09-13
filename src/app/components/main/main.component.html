@@ -1,1 +1,36 @@
-<p>main works!</p>
+<div class="row forbackground">
+    <h1 class="forh1">Popüler filmler</h1>
+    <div id="testimonials-adress" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1" *ngFor="let movie of moviesOne">
+                    <img src="{{movie.coverImage}}" alt="coverImage" class="forcoverimg">
+                    <h2 routerLink="/filmler/{{movie.movieId}}">{{movie.movieName}}</h2>                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-lg-5 offset-lg-1" *ngFor="let movie of moviesTwo">
+                <img src="{{movie.coverImage}}" alt="coverImage" class="forcoverimg">
+                <h2 routerLink="/filmler/{{movie.movieId}}">{{movie.movieName}}</h2>                
+                
+            </div>
+          </div>
+        </div> 
+    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonials-adress" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonials-adress" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+      
+  
