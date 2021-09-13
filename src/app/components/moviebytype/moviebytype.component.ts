@@ -27,6 +27,12 @@ export class MoviebytypeComponent implements OnInit {
     this.getMovieType();
   }
 
+  doStyle(value:number){
+    this.movieTypeService.getById(value).subscribe(response=>{
+      this.style = response.data.movieTypeName;
+    })
+  }
+
   getMoviesId(value:number){
     this.genreOfMovieService.getByTypeId(value).subscribe(response=>{
       this.GetMovies(response.data);
@@ -49,6 +55,7 @@ export class MoviebytypeComponent implements OnInit {
   getTypeId(){
     this.activetedRoute.params.subscribe(params=>{
       this.getMoviesId(params["movieTypeId"]);
+      this.doStyle(params["movieTypeId"]);
     })
   }
   
@@ -59,8 +66,8 @@ export class MoviebytypeComponent implements OnInit {
     })
   }
 
-  navigate(value:Number){
-    console.log(value);
-  }
+  // navigate(value:Number){
+  //   console.log(value);
+  // }
 
 }
